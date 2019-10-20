@@ -1,41 +1,72 @@
-public class queueu {
-    private int data[];
+public class latihanqueue {
+    private int head;
     private int tail;
+    private int size;
+    private String data[];
 
-    public queueu(int jumlah) {
-        data = new int[jumlah];
-        tail= -1;
-
+    public latihanqueue (int kapasitas){
+        head=-1;
+        tail=-1;
+        size = kapasitas;
+        data = new String[size];
     }
 
-    public void enqueue (int nilai) {//enque = push
-        if (tail < data.length - 1) {
-            data[++tail] = nilai;
+    public  boolean isEmpty (){
+        return head ==-1;
+    }
+
+    public boolean isFull (){
+        return tail >= size-1;
+    }
+
+    public void add (String input) {
+        if(isEmpty()){
+            data[++head] = input;
+            tail++;
+            System.out.println("Data " +input+ " telah dimasukkan ke queue");
+        } else {
+            if(isFull()){
+                System.out.println("Queue Telah Penuh");
+            } else {
+                data[++tail] = input;
+            }
         }
+        System.out.println("Data " +input+ " Telah Dimasukkan ke dalam Queue");
     }
 
-    public int dequeue () {//dequeue= pop
-        if(tail<0) {
-            //ambil indeks = 0
-            int temp = data[0];
-            //geser
-            for (int i = 0; i < data.length - 1; i++) {
-                data[i] = data[i + 1];
-
-
+    public void remove (){
+        if(isEmpty()){
+            System.out.println("Queue Kosong");
+        } else {
+            String temp = data[head];
+            for (int i =0; i<tail; i++){
+                data[i]= data[i+1];
             }
             tail--;
-            return temp;
-
+            System.out.println("Data " +temp+ " telah dihapus dari queue");
         }
-        return 0;
     }
 
-    public void print() {
-        for (int i = data.length - 1; i >= 0; i--) {
-            System.out.println(data[i]);
+    public void infoQueue (){
+        for (int i =0; i<=tail; i++){
+            System.out.println("Data " +i+ " = " +data[i]);
         }
+    }
 
+    public static void main(String[] args) {
+        latihanqueue a = new latihanqueue(5);
+        a.add("aku");
+        a.add("cinta");
+        a.add("ngoding");
+        a.add("selama");
+        a.add("nya");
+        a.infoQueue();
+        a.remove();
+        a.remove();
+        a.infoQueue();
 
     }
-}
+    }
+
+
+
