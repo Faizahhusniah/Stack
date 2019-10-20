@@ -1,10 +1,10 @@
-public class latihanqueue {
+public class queueu {
     private int head;
     private int tail;
     private int size;
     private String data[];
 
-    public latihanqueue (int kapasitas){
+    public queueu (int kapasitas){
         head=-1;
         tail=-1;
         size = kapasitas;
@@ -54,7 +54,7 @@ public class latihanqueue {
     }
 
     public static void main(String[] args) {
-        latihanqueue a = new latihanqueue(5);
+        queueu a = new queueu(5);
         a.add("aku");
         a.add("cinta");
         a.add("ngoding");
