@@ -20,10 +20,10 @@ public class belajarstack {
     }
     public void push (String input){
         if(isFull()){
-            System.out.println("Stackk Penuh");
+            System.out.println("lemari telah penuh");
         } else {
             data[++Top]= input;
-            System.out.println("Data " +input+ " dimasukkan ke dalam Stack");
+            System.out.println(input+ " dimasukkan ke dalam lemari");
 
 
         }
@@ -31,19 +31,21 @@ public class belajarstack {
     }
     public void pop () {
         if(isEmpty()){
-            System.out.println("Stack Kosong");
+            System.out.println("lemari Kosong");
         } else {
 
             String temp = data[Top];
             data[Top]= data[Top--];
-            System.out.println("Data "+temp+"dihapus dari dalam Stack");
+            System.out.println(temp+ " dikeluarkan dari dalam lemari");
 
         }
     }
 
     public void infoStack(){
-        for(int i = 0; i<=Top;i++){
-            System.out.println("Data Stack ke "+i+" = " +data[i]);
+        System.out.println("pakaian yang tersisa dalam lemari : ");
+        for(int i =0; i<=Top;i++){
+
+            System.out.println("*" +data[i]);
         }
 
 
@@ -55,11 +57,13 @@ public class belajarstack {
 
     public static void main(String[] args) {
         belajarstack s = new belajarstack(10);
-        s.push("faizah");
-        s.push("milla");
-        s.push("sabar");
+        s.push("kaos");
+        s.push("cardigan");
+        s.push("celana");
         s.pop();
         s.pop();
+        System.out.println("");
         s.infoStack();
     }
     }
+
