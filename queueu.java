@@ -26,29 +26,29 @@ public class latihanqueue {
 
         } else {
             if(isFull()){
-                System.out.println("lemari Telah Penuh");
+                System.out.println("barisan telah penuh, silahkan mengantri disebelah");
             } else {
                 data[++tail] = input;
             }
         }
-        System.out.println(input+ " Telah Dimasukkan ke dalam lemari");
+        System.out.println(input+ " dipanggil untuk menyalam guru");
     }
 
     public void remove (){
         if(isEmpty()){
-            System.out.println("Lemari Kosong");
+            System.out.println("siswa kosong");
         } else {
             String temp = data[head];
             for (int i =0; i<tail; i++){
                 data[i]= data[i+1];
             }
             tail--;
-            System.out.println(temp+ " telah dikeluarkan dari lemari");
+            System.out.println(temp+ " dipanggil untuk menyalam guru");
         }
     }
 
     public void infoQueue (){
-        System.out.println("pakaian yang ada dalam lemari");
+        System.out.println("siswa yang belum dipanggil");
         for (int i =0; i<=tail; i++){
             System.out.println(i+")"+data[i]);
         }
@@ -56,11 +56,11 @@ public class latihanqueue {
 
     public static void main(String[] args) {
         latihanqueue a = new latihanqueue(5);
-        a.add("kemeja");
-        a.add("celana");
-        a.add("kaos");
-        a.add("rok");
-        a.add("cardigan");
+        a.add("milla");
+        a.add("bibah");
+        a.add("sabar");
+        a.add("indri");
+        a.add("nae");
         System.out.println("");
         a.infoQueue();
         System.out.println("");
@@ -71,6 +71,7 @@ public class latihanqueue {
 
     }
     }
+
 
 
 
